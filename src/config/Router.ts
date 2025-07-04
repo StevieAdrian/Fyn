@@ -1,7 +1,4 @@
-import type { IDefaultRouter } from "../interfaces/IRoute";
+import type { IDefaultRouter } from "../interfaces/IRoute"
+import authRoutes from "../views/login/Login.router"
 
-import routerLogin from "../views/login/Login.router";
-
-export const routerContainer: IDefaultRouter[]= [
-    ...routerLogin
-];
+export const routerContainer: IDefaultRouter[] = [...authRoutes]

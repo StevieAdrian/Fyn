@@ -1,0 +1,329 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #1A1A1A, #0E2364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1200px;
+  max-height: 800px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: auto;
+}
+
+.portrait-section {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1e293b;
+  align-items: flex-end;
+}
+
+.portrait-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.portrait-content {
+  color: white;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: -1rem;
+  font-family: "Playfair";
+  white-space: nowrap
+  
+}
+
+.main-quote {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: "Playfair";
+  white-space: nowrap;
+  margin-bottom: -1rem;
+
+}
+.sec-quote{
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: "Playfair";
+  white-space: nowrap;
+}
+
+
+.login-right {
+  flex: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e53e3e;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.form-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+  font-family: "Playfair";
+}
+
+.form-subtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+
+
+.forgot-password-link:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.general-error {
+  text-align: center;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem;
+  width: 100%;
+}
+
+.sign-in-button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+
+
+.sign-in-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.google-signin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.google-signin-button:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.google-signin-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.google-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: white;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 0.875rem;
+  color: black;
+  width: 100%;
+}
+
+.signup-button {
+  color: black;
+  cursor: pointer;
+  font-size: bold;
+  
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .portrait-section {
+    min-height: 40vh;
+  }
+
+  .portrait-overlay {
+    padding: 2rem;
+  }
+
+  .main-quote {
+    font-size: 1.5rem;
+  }
+
+  .login-form-container {
+    min-height: 60vh;
+    padding: 2rem;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait-section {
+    min-height: 30vh;
+  }
+
+  .portrait-overlay {
+    padding: 1.5rem;
+  }
+
+  .main-quote {
+    font-size: 1.25rem;
+  }
+
+  .login-form-container {
+    padding: 1.5rem;
+    min-height: 70vh;
+  }
+}
+
