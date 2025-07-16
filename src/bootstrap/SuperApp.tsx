@@ -1,12 +1,13 @@
-import React, { Component, Suspense } from "react";
-import { Route, Routes } from 'react-router-dom';
-import SimpleLoading from "../components/simple_loading";
-import { createStore } from 'redux';
+import React, { Component, Suspense } from "react"
+import { Route, Routes } from "react-router-dom"
+import SimpleLoading from "../components/simple_loading"
+import { createStore } from "redux"
 
-const LoginApp = React.lazy(() => import('../views/login/LoginApp'));
+const LoginApp = React.lazy(() => import("../views/login/LoginApp"))
+const RegisterApp = React.lazy(() => import("../views/register/RegisterApp"))
 
-const dummyReducer = (state = {}) => state;
-const dummyStore = createStore(dummyReducer);
+const dummyReducer = (state = {}) => state
+const dummyStore = createStore(dummyReducer)
 const dummyPersistor = {
   purge: () => Promise.resolve(),
   flush: () => Promise.resolve(),
@@ -17,11 +18,10 @@ const dummyPersistor = {
     bootstrapped: true,
   }),
   subscribe: (callback: any) => {
-    callback(); // rehydration gw trigger manual sementara, ntar ganti tunggu udh ada auth
-    return () => {};
+    callback()
+    return () => {}
   },
-} as any;
-
+} as any
 
 class SuperApp extends Component {
   render() {
@@ -29,10 +29,12 @@ class SuperApp extends Component {
       <Suspense fallback={<SimpleLoading />}>
         <Routes>
           <Route path="/" element={<LoginApp Store={dummyStore} Persistor={dummyPersistor} />} />
+          <Route path="/login" element={<LoginApp Store={dummyStore} Persistor={dummyPersistor} />} />
+          <Route path="/register" element={<RegisterApp Store={dummyStore} Persistor={dummyPersistor} />} />
         </Routes>
       </Suspense>
-    );
+    )
   }
 }
 
-export default SuperApp;
+export default SuperApp

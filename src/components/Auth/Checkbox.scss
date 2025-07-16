@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.checkbox-group {
+  margin-bottom: $spacing-md;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: $font-size-sm;
+    color: $text-dark;
+  }
+
+  &__input {
+    margin-right: $spacing-sm;
+    accent-color: $primary-red;
+  }
+
+  &__text {
+    user-select: none;
+  }
+}

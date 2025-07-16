@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: $spacing-md;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background-color: $primary-red;
+    color: $white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($primary-red, 5%);
+    }
+  }
+
+  &--google {
+    background-color: $white;
+    color: $text-dark;
+    border: 1px solid $border-color;
+
+    &:hover:not(:disabled) {
+      background-color: #f8f9fa;
+    }
+  }
+}
