@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.input-group {
+  margin-bottom: $spacing-lg;
+
+  &__label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    color: $text-dark;
+    font-weight: 500;
+    font-size: $font-size-sm;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+    transition: border-color 0.3s ease;
+    background: $white;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-red;
+    }
+
+    &--error {
+      border-color: $primary-red;
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+  }
+
+  &__error {
+    color: $primary-red;
+    font-size: 0.75rem;
+    margin-top: $spacing-xs;
+    display: block;
+  }
+}

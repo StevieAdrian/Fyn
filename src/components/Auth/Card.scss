@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.auth-card {
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__title {
+    color: $primary-red;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin: 0 0 $spacing-sm 0;
+  }
+
+  &__subtitle {
+    color: $text-light;
+    font-size: $font-size-sm;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+ 
+}

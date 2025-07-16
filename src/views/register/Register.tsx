@@ -5,31 +5,22 @@ import { useForm } from "../../hooks/useForm"
 import { Card } from "../../components/Auth/Card"
 import { Input } from "../../components/Auth/Input"
 import { Button } from "../../components/Auth/Button"
-import { Checkbox } from "../../components/Auth/Checkbox"
 import logo from "../../assets/logo.png"
-import "./Login.scss"
+import "./Register.scss"
 
-interface LoginForm {
+interface RegisterForm {
   email: string
   password: string
-  rememberMe: boolean
 }
 
-const Login = () => {
-  const {
-    values,
-    errors,
-    loading,
-    handleChange,
-    handleSubmit
-  } = useForm<LoginForm>(
+const Register = () => {
+  const { values, errors, loading, handleChange, handleSubmit } = useForm<RegisterForm>(
     {
       email: "",
       password: "",
-      rememberMe: false,
     },
     (values) => {
-      const errors: Partial<Record<keyof LoginForm, string>> = {}
+      const errors: Partial<Record<keyof RegisterForm, string>> = {}
 
       if (!values.email) {
         errors.email = "Email is required"
@@ -39,37 +30,35 @@ const Login = () => {
 
       if (!values.password) {
         errors.password = "Password is required"
+      } else if (values.password.length < 6) {
+        errors.password = "Password must be at least 6 characters"
       }
 
       return errors
     }
   )
 
-  const onSubmit = async (data: LoginForm) => {
+  const onSubmit = async (data: RegisterForm) => {
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log("Login:", data)
-    alert("Login successful!")
-  }
-
-  const handleChangeAdapter = (name: string, value: string | boolean) => {
-    handleChange(name as keyof LoginForm, value)
+    console.log("Register:", data)
+    alert("Registration successful!")
   }
 
   return (
-    <div className="login-page">
-      <div className="login-page__container">
-        <div className="login-page__logo">
-          <img src={logo || ""} alt="Fyn" />
+    <div className="register-page">
+      <div className="register-page__container">
+        <div className="register-page__logo">
+          <img src={logo || "/placeholder.svg"} alt="Fyn" />
         </div>
 
-        <Card title="Login" subtitle="Access your shopping account.">
+        <Card title="Register" subtitle="Join us for a personalized shopping experience.">
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               label="Email"
               name="email"
               type="email"
               value={values.email}
-              onChange={handleChangeAdapter}
+              onChange={(name, value) => handleChange(name as keyof RegisterForm, value)}
               error={errors.email}
               placeholder="Enter your email"
             />
@@ -79,44 +68,31 @@ const Login = () => {
               name="password"
               type="password"
               value={values.password}
-              onChange={handleChangeAdapter}
+              onChange={(name, value) => handleChange(name as keyof RegisterForm, value)}
               error={errors.password}
               placeholder="Enter your password"
               showPasswordToggle
             />
 
-            <div className="login-page__options">
-              <Checkbox
-                label="Remember Me"
-                name="rememberMe"
-                checked={values.rememberMe}
-                onChange={handleChangeAdapter}
-              />
-              <Link to="/forgot-password" className="login-page__forgot">
-                Forgot Password
-              </Link>
-            </div>
-
             <Button type="submit" loading={loading}>
-              Login
+              Sign Up
             </Button>
 
-             <Button type="button" variant="google">
-             <img
+            <Button type="button" variant="google">
+               <img
               src="https://www.google.com/favicon.ico"
               alt="Google"
               style={{ width: '20px', height: '20px', marginRight: '8px' }}
-            />
-             Google
-             </Button>
+            /> Sign in with Google
+            </Button>
 
-            <p className="login-page__register">
-              Not registered yet ? <Link to="/register">Create an account</Link>
+            <p className="register-page__login">
+              Already have an account ? <Link to="/login">Sign in</Link>
             </p>
           </form>
         </Card>
 
-        <div className="login-page__footer">
+        <div className="register-page__footer">
           © 2024-2025, PT FYN | <Link to="/help">Support</Link>
         </div>
       </div>
@@ -124,4 +100,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
